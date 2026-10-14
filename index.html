@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>⭕ Tic Tac Toe ❌</h1>
+        <p class="subtitle">Play with your friend!</p>
+
+        <div class="scoreboard">
+            <div class="score">
+                <span>Player X</span>
+                <h2 id="scoreX">0</h2>
+            </div>
+            <div class="score">
+                <span>Draws</span>
+                <h2 id="scoreDraw">0</h2>
+            </div>
+            <div class="score">
+                <span>Player O</span>
+                <h2 id="scoreO">0</h2>
+            </div>
+        </div>
+
+        <h2 id="status">Player X's Turn</h2>
+
+        <div class="board" id="board">
+            <button class="cell" data-index="0"></button>
+            <button class="cell" data-index="1"></button>
+            <button class="cell" data-index="2"></button>
+            <button class="cell" data-index="3"></button>
+            <button class="cell" data-index="4"></button>
+            <button class="cell" data-index="5"></button>
+            <button class="cell" data-index="6"></button>
+            <button class="cell" data-index="7"></button>
+            <button class="cell" data-index="8"></button>
+        </div>
+
+        <button id="restartBtn" class="restart-btn">
+            🔄 Restart Game
+        </button>
+
+        <button id="resetBtn" class="reset-btn">
+            Reset Scores
+        </button>
+
+        <p class="footer">Made with ❤️ using HTML, CSS & JavaScript</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

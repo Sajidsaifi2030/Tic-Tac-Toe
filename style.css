@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 430px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px 20px;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 29px;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.subtitle {
+    color: #cbd5e1;
+    margin-bottom: 22px;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.score {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 5px;
+    border-radius: 12px;
+}
+
+.score span {
+    font-size: 13px;
+    color: #cbd5e1;
+}
+
+.score h2 {
+    margin-top: 7px;
+    font-size: 25px;
+}
+
+#status {
+    font-size: 20px;
+    margin-bottom: 18px;
+    color: #facc15;
+    min-height: 25px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.cell {
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 15px;
+    background: #f1f5f9;
+    font-size: clamp(35px, 10vw, 55px);
+    font-weight: bold;
+    color: #0f172a;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cell:hover:not(:disabled) {
+    background: #dbeafe;
+    transform: scale(1.04);
+}
+
+.cell:disabled {
+    cursor: not-allowed;
+}
+
+.cell.x {
+    color: #2563eb;
+}
+
+.cell.o {
+    color: #e11d48;
+}
+
+.cell.winner {
+    background: #86efac;
+    animation: pulse 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+.restart-btn,
+.reset-btn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+.restart-btn {
+    background: #38bdf8;
+    color: #082f49;
+}
+
+.reset-btn {
+    background: #334155;
+    color: white;
+}
+
+.restart-btn:hover,
+.reset-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+.footer {
+    margin-top: 12px;
+    color: #cbd5e1;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+@media (max-width: 360px) {
+    .game-container {
+        padding: 20px 14px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .board {
+        gap: 7px;
+    }
+}
